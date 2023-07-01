@@ -1524,7 +1524,7 @@ static int FTL_GetStruct(FTLStruct type, void** data, int* size) {
 	}
 }
 
-static int VFL_GetStruct(FTLStruct type, void** data, int* size) {
+static int VFL_GetStruct(VFLStruct type, void** data, int* size) {
 	switch(type) {
 		case VFLData1SID:
 			*data = &VFLData1;

@@ -23,7 +23,7 @@ henv.SConscript(['scons/Doxygen.SConscript'])
 env = ARMEnvironment()
 env.Append(CPPDEFINES=[
 	'OPENIBOOT_VERSION='+version,
-	'OPENIBOOT_VERSION_BUILD='+GetGitCommit(),
+	'OPENIBOOT_VERSION_BUILD='+GetGitCommit().decode(),
 	])
 env.Append(CPPFLAGS = ['-Wall', '-Werror', '-O2', '-Ttext=0x0'])
 Export('env')
@@ -33,8 +33,8 @@ def localize(env, ls):
 env.AddMethod(localize, "Localize")
 
 # Documentation
-docs = henv.Doxygen("Doxyfile")
-Alias("docs", docs)
+#docs = henv.Doxygen("Doxyfile")
+#Alias("docs", docs)
 
 # Base Target Sources
 base_src = env.Localize([
